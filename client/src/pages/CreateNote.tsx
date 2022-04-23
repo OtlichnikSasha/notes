@@ -3,7 +3,8 @@ import {Link, Navigate, useNavigate} from "react-router-dom";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 import {Editor} from "@tinymce/tinymce-react";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 export const CreateNote: FC = () => {
     useEffect(() => {
         document.title = "Новая заметка"
@@ -48,11 +49,11 @@ export const CreateNote: FC = () => {
         <div className="container">
             <div className="top_action_place">
                 <Link to="/index">
-                    <span className="fa fa-arrow-left"/>
+                    <FontAwesomeIcon icon={faArrowLeft} />
                 </Link>
                 {noteData.name || noteData.noteText ?
                     <div onClick={saveNote}>
-                        <i className="fa-solid fa-check"/>
+                        <FontAwesomeIcon icon={faCheck} />
                     </div>
                     :
                     <></>
