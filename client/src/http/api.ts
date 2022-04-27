@@ -15,6 +15,7 @@ export class api {
             }
         } catch (e: any) {
             result.error = e.response.data.message
+            result.status = false;
         }
         return result;
     }
@@ -33,7 +34,7 @@ export class api {
             }
         } catch (e: any) {
             result.error = e.response.data.message
-            return result
+            result.status = false;
         }
         return result
     }
@@ -52,27 +53,26 @@ export class api {
             }
         } catch (e: any) {
             result.error = e.response.data.message
-            return result
+            result.status = false
         }
         return result;
     }
 
     static async delete (url: string, args: object) {
         let result = {
-            success: false,
+            status: false,
             data: [],
             error: '',
-            total: null
         };
         try {
             const res = await http.delete(url, { params: { ...args } });
             if (res.status === 200) {
-                result.success = true;
+                result.status = true;
                 result.data = res.data;
             }
         } catch (e: any) {
             result.error = e.response.data.message
-            return result
+            result.status = false
         }
         return result;
     }
