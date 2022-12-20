@@ -10,8 +10,7 @@ export const NotesList: FC = () => {
         <div className="notes_card_place">
             {loading && <div className="preloader_text"/>}
             {
-                !loading && notes.length ? notes.map(note => {
-                        return (
+                !loading && notes.length ? notes.map(note => (
                             <Link key={note.id} className="note_card" to={`/note/${note.id}`}>
                                 {note.name &&
                                     <div className="note_card__heading">
@@ -24,7 +23,7 @@ export const NotesList: FC = () => {
                                 </div>
                             </Link>
                         )
-                    })
+                    )
                     :
                     <Empty loading={loading}/>
             }
