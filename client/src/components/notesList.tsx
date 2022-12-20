@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {Empty} from "./block/Empty";
 import {Link} from "react-router-dom";
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 export const NotesList: FC = () => {
     const {notes, loading} = useTypedSelector(state => state.notes)
@@ -20,7 +20,7 @@ export const NotesList: FC = () => {
                                 }
                                 <div className="note_card__text" dangerouslySetInnerHTML={{__html: note.noteText}}/>
                                 <div className="note_card__date">
-                                    {moment(note.updatedAt).format('MMMM Do YYYY, H:MM')}
+                                    {dayjs(note.updatedAt).format('D MMMM, YYYY в H:MM')}
                                 </div>
                             </Link>
                         )

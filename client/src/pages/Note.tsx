@@ -3,13 +3,14 @@ import {Link, useNavigate, useParams} from "react-router-dom";
 import {useActions} from "../hooks/useActions";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {Editor} from "@tinymce/tinymce-react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck, faArrowLeft, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCheck, faArrowLeft, faTrashAlt} from '@fortawesome/free-solid-svg-icons'
+
 interface NoteParams {
     id?: string
 }
 
-export const Note: FC = () => {
+const Note = () => {
     const {id}: NoteParams = useParams()
     const {fetchNote, fetchEditNote, fetchRemoveNote} = useActions()
     const {note, loading, status} = useTypedSelector(state => state.note)
@@ -77,15 +78,15 @@ export const Note: FC = () => {
         <div className="container">
             <div className="top_action_place">
                 <Link to="/index">
-                    <FontAwesomeIcon icon={faArrowLeft} />
+                    <FontAwesomeIcon icon={faArrowLeft}/>
                 </Link>
                 <div className="top_action__right_place">
                     <div onClick={removeNote}>
-                        <FontAwesomeIcon icon={faTrashAlt} />
+                        <FontAwesomeIcon icon={faTrashAlt}/>
                     </div>
                     {noteData.name || noteData.noteText ?
                         <div onClick={saveNote}>
-                            <FontAwesomeIcon icon={faCheck} />
+                            <FontAwesomeIcon icon={faCheck}/>
                         </div>
                         :
                         <></>
@@ -124,3 +125,5 @@ export const Note: FC = () => {
     );
 };
 
+
+export default Note;

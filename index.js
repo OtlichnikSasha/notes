@@ -6,7 +6,7 @@ const router = require("./apiRoutes/index")
 const app = express()
 
 const corsOptions ={
-    origin:'http://localhost:3000',
+    origin: ['http://localhost:3000', 'https://otlichniksasha.github.io/Severstal-Notes-Test-App/'],
     credentials:true,
     optionSuccessStatus:200
 }

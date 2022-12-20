@@ -1,9 +1,9 @@
-import {FC, useEffect} from 'react';
+import {useEffect} from 'react';
 import {useActions} from "../hooks/useActions";
 import {CreateNoteBtn} from "../components/block/CreateNoteBtn";
 import {NotesList} from "../components/notesList";
 
-export const Index: FC = () => {
+const Index = () => {
     useEffect(() => {
         fetchNotes({})
         document.title = "Заметки"
@@ -17,3 +17,4 @@ export const Index: FC = () => {
     );
 };
 
+export default Index;

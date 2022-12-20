@@ -1,11 +1,12 @@
-import React, {FC, useCallback, useEffect, useRef, useState} from 'react';
-import {Link, Navigate, useNavigate} from "react-router-dom";
+import React, {useCallback, useEffect, useRef, useState} from 'react';
+import {Link, useNavigate} from "react-router-dom";
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useActions} from "../hooks/useActions";
 import {Editor} from "@tinymce/tinymce-react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-export const CreateNote: FC = () => {
+
+const CreateNote = () => {
     useEffect(() => {
         document.title = "Новая заметка"
     }, [])
@@ -85,3 +86,4 @@ export const CreateNote: FC = () => {
     );
 };
 
+export default CreateNote;

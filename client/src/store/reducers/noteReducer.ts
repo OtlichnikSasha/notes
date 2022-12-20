@@ -1,5 +1,5 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {getNote, editNote, removeNote, createNote} from "../../api/index";
+import {getNote, editNote, removeNote, createNote} from "../../api";
 import { NoteState} from "../../types";
 
 const initialState : NoteState = {

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-export const NotFound = () => {
+const NotFound = () => {
     return (
         <div>
             <div className="not_found_heading">
@@ -12,4 +12,6 @@ export const NotFound = () => {
         </div>
     );
 };
+
+export default NotFound;
 
